@@ -1,3 +1,7 @@
+using CW_9_S29916.Data;
+using CW_9_S29916.Services;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,6 +11,13 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
+
+builder.Services.AddDbContext<AppDbContext>(opt =>
+{
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
+});
+
+builder.Services.AddScoped<IDBService, DBService>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
