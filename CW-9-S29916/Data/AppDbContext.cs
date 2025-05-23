@@ -3,18 +3,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CW_9_S29916.Data;
 
-public class AppDbContext : DbContext
+public class AppDbContext(DbContextOptions options) : DbContext(options)
 {
     public DbSet<Doctor> Doctors { get; set; }
     public DbSet<Patient> Patients { get; set; }
     public DbSet<Medicament> Medicaments { get; set; }
     public DbSet<Prescription> Prescriptions { get; set; }
     public DbSet<Prescription_Medicament> Prescription_Medicaments { get; set; }
-    
-    public AppDbContext(DbContextOptions options) : base(options)
-    {
-    }
-    
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
@@ -75,5 +71,4 @@ public class AppDbContext : DbContext
             }).ToArray()
         );
     }
-
 }

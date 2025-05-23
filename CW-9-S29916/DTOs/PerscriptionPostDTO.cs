@@ -6,7 +6,7 @@ public class PerscriptionPostDTO
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public DateTime BirthDate { get; set; }
-    public IEnumerable<MeidcamentDTO> Type { get; set; }
+    public IEnumerable<MeidcamentDTO> medicaments { get; set; }
     public DateTime Date { get; set; }
     public DateTime DueDate { get; set; }
 }
