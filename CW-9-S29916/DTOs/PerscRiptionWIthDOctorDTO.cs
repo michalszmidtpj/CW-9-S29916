@@ -5,6 +5,6 @@ public class PerscRiptionWIthDOctorDTO
     public int IdPerscription { get; set; }
     public DateTime Date { get; set; }
     public DateTime DueDate { get; set; }
-    public MeidcamentDTO Medicaments { get; set; }
+    public IEnumerable<MeidcamentDTO> Medicaments { get; set; }
     public DoctorDTO Doctor { get; set; }
 }

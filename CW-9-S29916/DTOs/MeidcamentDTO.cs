@@ -7,6 +7,7 @@ public class MeidcamentDTO
     public string Name { get; set; }
     public string Description { get; set; }
     public string Type { get; set; }
-    public IEnumerable<MeidcamentDTO> Medicaments { get; set; }
+    public int Dose { get; set; }
+    // public IEnumerable<MeidcamentDTO> Medicaments { get; set; }
 
 }

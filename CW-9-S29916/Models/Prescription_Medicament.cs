@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CW_9_S29916.Models;
 
-
+[Table("Prescription_Medicament")]
 [PrimaryKey(nameof(IdMedicament), nameof(IdPrescription))]
-public class Prescription_Medicament
+public class PrescriptionMedicament
 {
     [ForeignKey("IdMedicament")]
     public int IdMedicament { get; set; }
